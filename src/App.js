@@ -10,8 +10,6 @@ const PARAM_SEARCH = 'query=';
 const PARAM_PAGE = 'page=';
 const PARAM_HPP = 'hitsPerPage=';
 
-//const url = `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${DEFAULT_QUERY}`;
-
 const largeColumn = {
   width: '35%',
 };
@@ -23,15 +21,6 @@ const midColumn = {
 const smallColumn = {
   width: '10%',
 };
-
-//  Search function can be at to level or the component handling the list rendering
-//
-// function isSearched(searchTerm) {
-//   return function(item){
-//     return item.title.toLowerCase(item).includes(searchTerm.toLowerCase());
-//   }
-// }
-// ES6 const isSearched = searchTerm => item => item.title.toLowerCase().includes(searchTerm.toLowerCase());
 
 const Button = ({className='', onClick, children}) =>
   <button
@@ -115,14 +104,6 @@ class App extends Component {
     console.log(this.state.searchTerm);
   }
 
-  /*
-  Not doing client side search anymore this not used
-  isSearched(searchTerm){
-    return function(item) {
-      return item.title.toLowerCase(item).includes(searchTerm.toLowerCase());
-    }
-  */
-
   onSubmitSearch(event){
     const {searchTerm} = this.state;
     event.preventDefault();
@@ -149,13 +130,6 @@ class App extends Component {
   render() {
     const {result, searchTerm} = this.state;
 
-    /*
-    Replaced with tenary
-    if(!result){
-        // render function exists here if result is null
-        return null;
-    }
-    */
     const page = (result && result.page) || 0;
 
     console.log(result);
