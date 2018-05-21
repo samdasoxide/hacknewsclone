@@ -138,7 +138,7 @@ class App extends Component {
     const {hits, page } = results[searchKey];
 
     const isNotId = item => item.objectID !== id;
-    const updatedHits = this.state.result.hits.filter(isNotId);
+    const updatedHits = hits.filter(isNotId);
     this.setState({
       results: {results, [searchKey]:{hits: updatedHits, page }}
     });
@@ -163,7 +163,7 @@ class App extends Component {
       <div className="page">
         <div className="interactions">
           <Search
-          value={this.state.searchTerm}
+          value={searchTerm}
           onChange={this.onSearchChange}
           onSubmit={this.onSubmitSearch}
           >
