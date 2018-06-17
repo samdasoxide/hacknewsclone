@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer'
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import App, { Search, Button, Table } from './App';
+
+
+Enzyme.configure({adapter: new Adapter()});
 
 describe('App', () => {
 
@@ -21,14 +26,14 @@ describe('App', () => {
 
 });
 
-describe('Search'), ()=> {
+describe('Search', ()=> {
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<Search>Search</Search>, div);
         ReactDOM.unmountComponentAtNode(div);
     });
 
-    test('has valid snapshot', () =>{
+    test('has valid snapshot', () => {
         const component = renderer.create(
             <Search>Search</Search>
         );
@@ -40,12 +45,20 @@ describe('Search'), ()=> {
 
 describe('Button', () => {
     it('renders without crashing', () => {
-        cont div = document.createElement('div');
+        const div = document.createElement('div');
         ReactDOM.render(<Button>Give Me More</Button>, div);
         ReactDOM.unmountComponentAtNode(div);
     });
 
-    test('has valid snapshot', () =>{
+    it('has valid html', () => {
+      const element = shallow(<Button>Click me</Button>);
+      expect(element.html()).toEqual('<button class="" type="submit">Click me</button>');
+    });
+
+    // TODO
+    // find a way to test if it fetches the data onClick
+
+    test('has valid snapshot', () => {
         const component = renderer.create(
             <Button>Give Me More</Button>
         );
@@ -65,13 +78,20 @@ describe('Table', () => {
 
     it('renders without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<Table {...props}/>, div);
+        ReactDOM.render(<Table onDismiss={() => console.log('dismissed')} {...props}/>, div);
         ReactDOM.unmountComponentAtNode(div);
+    });
+
+    it('shows two items in list', () => {
+      const element = shallow(
+        <Table onDismiss={() => console.log('dismissed')} {...props} />
+      );
+      expect(element.find('.table-row').length).toBe(2);
     });
 
     test('has a valid snapshot', () => {
         const component = renderer.create(
-            <Table {...props}/>
+            <Table onDismiss={() => console.log('dismissed')} {...props}/>
         );
         let tree = component.toJSON();
         expect(tree).toMatchSnapshot();
