@@ -24,17 +24,101 @@ exports[`App has a valid snapshot 1`] = `
       </button>
     </form>
   </div>
-  <div />
+  <div
+    className="table"
+  >
+    <div
+      className="table-header"
+    >
+      <span
+        style={
+          Object {
+            "width": "40%",
+          }
+        }
+      >
+        <div>
+          <button
+            className="button-inline"
+            onClick={[Function]}
+            type="submit"
+          >
+            Title
+          </button>
+          
+        </div>
+      </span>
+      <span
+        style={
+          Object {
+            "width": "10%",
+          }
+        }
+      >
+        <div>
+          <button
+            className="button-inline"
+            onClick={[Function]}
+            type="submit"
+          >
+            author
+          </button>
+          
+        </div>
+      </span>
+      <span
+        style={
+          Object {
+            "width": "10%",
+          }
+        }
+      >
+        <div>
+          <button
+            className="button-inline"
+            onClick={[Function]}
+            type="submit"
+          >
+            Comments
+          </button>
+          
+        </div>
+      </span>
+      <span
+        style={
+          Object {
+            "width": "10%",
+          }
+        }
+      >
+        <div>
+          <button
+            className="button-inline"
+            onClick={[Function]}
+            type="submit"
+          >
+            Points
+          </button>
+          
+        </div>
+      </span>
+      <span
+        style={
+          Object {
+            "width": "10% ",
+          }
+        }
+      >
+        Archive
+      </span>
+    </div>
+  </div>
   <div
     className="interactions"
   >
-    <button
-      className=""
-      onClick={[Function]}
-      type="submit"
-    >
-      More
-    </button>
+    <div>
+      Loading...
+    </div>
   </div>
 </div>
 `;
@@ -69,7 +153,114 @@ exports[`Search has valid snapshot 1`] = `
 `;
 
 exports[`Table has a valid snapshot 1`] = `
-<div>
+<div
+  className="table"
+>
+  <div
+    className="table-header"
+  >
+    <span
+      style={
+        Object {
+          "width": "40%",
+        }
+      }
+    >
+      <div>
+        <button
+          className="button-inline button-active"
+          onClick={[Function]}
+          type="submit"
+        >
+          Title
+        </button>
+        <svg
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="12"
+            x2="12"
+            y1="19"
+            y2="5"
+          />
+          <polyline
+            points="5 12 12 5 19 12"
+          />
+        </svg>
+      </div>
+    </span>
+    <span
+      style={
+        Object {
+          "width": "10%",
+        }
+      }
+    >
+      <div>
+        <button
+          className="button-inline"
+          onClick={[Function]}
+          type="submit"
+        >
+          author
+        </button>
+        
+      </div>
+    </span>
+    <span
+      style={
+        Object {
+          "width": "10%",
+        }
+      }
+    >
+      <div>
+        <button
+          className="button-inline"
+          onClick={[Function]}
+          type="submit"
+        >
+          Comments
+        </button>
+        
+      </div>
+    </span>
+    <span
+      style={
+        Object {
+          "width": "10%",
+        }
+      }
+    >
+      <div>
+        <button
+          className="button-inline"
+          onClick={[Function]}
+          type="submit"
+        >
+          Points
+        </button>
+        
+      </div>
+    </span>
+    <span
+      style={
+        Object {
+          "width": "10% ",
+        }
+      }
+    >
+      Archive
+    </span>
+  </div>
   <div
     className="table-row"
   >
